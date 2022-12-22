@@ -1,0 +1,55 @@
+#!/usr/bin/make -f
+
+#export DH_VERBOSE=1
+
+build-stamp:
+	/usr/share/mythes/th_gen_idx.pl -o th_en_AU_v2.idx.debian < th_en_AU_v2.dat
+	touch build-stamp
+
+build: build-stamp
+
+install-stamp: build
+	mkdir -p $(CURDIR)/debian/usr/share/hunspell \
+		$(CURDIR)/debian/usr/share/mythes \
+		$(CURDIR)/debian/usr/share/myspell/dicts \
+		$(CURDIR)/debian/var/lib/dictionaries-common/hunspell/
+
+	# install dictionary files
+	install -m644 en_AU.aff en_AU.dic \
+		$(CURDIR)/debian/usr/share/hunspell
+
+	# install thesaurus files
+	install -m644  th_en_AU_v2.dat $(CURDIR)/debian/usr/share/mythes
+	install -m644  th_en_AU_v2.idx.debian $(CURDIR)/debian/usr/share/mythes/th_en_AU_v2.idx
+
+	# install Emacs dictionary info file
+	install -m644 debian/myspell-en-au.info \
+	  $(CURDIR)/debian/var/lib/dictionaries-common/hunspell/myspell-en-au
+	touch install-stamp
+
+install: install-stamp
+
+clean:
+	dh_testdir
+	dh_testroot
+	rm -rf build-stamp install-stamp debian/usr
+	dh_clean
+
+binary-indep: install-stamp
+	dh_testdir
+	dh_testroot
+	dh_install --sourcedir=debian
+	dh_installchangelogs 
+	dh_installdocs
+	dh_link
+	dh_compress 
+	dh_fixperms
+	dh_installdeb
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary-arch:
+
+binary: binary-arch binary-indep
+.PHONY: build clean install binary-indep binary-arch binary

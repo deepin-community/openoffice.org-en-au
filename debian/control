@@ -1,0 +1,34 @@
+Source: openoffice.org-en-au
+Section: text
+Priority: optional
+Maintainer: John Steele Scott <toojays@toojays.net>
+Build-Depends: debhelper (>> 5.0.0)
+Build-Depends-Indep: libmythes-dev
+Standards-Version: 3.8.3
+
+Package: mythes-en-au
+Architecture: all
+Section: text
+Depends: dictionaries-common (>= 0.10), ${misc:Depends}
+Recommends: libreoffice-writer
+Provides: openoffice.org2-thesaurus, openoffice.org-thesaurus-en-au
+Conflicts: openoffice.org (<< 1.9)
+Breaks: openoffice.org-thesaurus-en-au (<<2.1-5.2~)
+Replaces: openoffice.org-thesaurus-en-au (<<2.1-5.2~)
+Description: Australian English Thesaurus for OpenOffice.org
+ Openoffice.org is a full-featured office productivity suite that provides a
+ near drop-in replacement for Microsoft(R) Office.
+ .
+ This package contains an Australian English thesaurus for OpenOffice.org.
+ It is based on the American version, but has American spellings removed.
+
+Package: myspell-en-au
+Architecture: all
+Conflicts: openoffice.org (<= 1.0.3-2)
+Depends: dictionaries-common (>= 1.0), ${misc:Depends}
+Provides: myspell-dictionary, myspell-dictionary-en
+Description: English_australian dictionary for myspell
+ This is the English_australian dictionary for use with the myspell
+ spellchecker, which is currently used within OpenOffice.org and the
+ Mozilla spellchecker.
+
