@@ -6,7 +6,7 @@ build-stamp:
 	/usr/share/mythes/th_gen_idx.pl -o th_en_AU_v2.idx.debian < th_en_AU_v2.dat
 	touch build-stamp
 
-build: build-stamp
+build build-arch build-indep: build-stamp
 
 install-stamp: build
 	mkdir -p $(CURDIR)/debian/usr/share/hunspell \
@@ -39,10 +39,10 @@ binary-indep: install-stamp
 	dh_testdir
 	dh_testroot
 	dh_install --sourcedir=debian
-	dh_installchangelogs 
+	dh_installchangelogs
 	dh_installdocs
 	dh_link
-	dh_compress 
+	dh_compress
 	dh_fixperms
 	dh_installdeb
 	dh_gencontrol
