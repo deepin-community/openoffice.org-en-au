@@ -1,0 +1,11 @@
+--- openoffice.org-en-au-2.1.orig/th_en_AU_v2.dat
++++ openoffice.org-en-au-2.1/th_en_AU_v2.dat
+@@ -63981,7 +63981,7 @@ colostomy|1
+ (noun)|ostomy (generic term)
+ colostrum|1
+ (noun)|foremilk|milk (generic term)
+-colour|15
++colour|17
+ (adj)|black-and-white (antonym)
+ (noun)|colouring material|material (generic term)|stuff (generic term)
+ (noun)|people of colour|race (generic term)

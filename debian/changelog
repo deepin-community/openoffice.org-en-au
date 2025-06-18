@@ -1,3 +1,42 @@
+openoffice.org-en-au (2.1-7) unstable; urgency=medium
+
+  * QA upload.
+
+  * Acknowledged NMU (Closes: #1005746)
+  * Added d/gbp.conf to describe branch layout.
+  * Updated vcs in d/control to Salsa.
+  * Updated d/gbp.conf to enforce the use of pristine-tar.
+  * Updated Standards-Version from 3.8.3 to 4.7.0.
+  * Use wrap-and-sort -at for debian control files.
+  * Trim trailing whitespace.
+  * Bump debhelper from deprecated 9 to 13.
+  * Set debhelper-compat version in Build-Depends.
+  * Remove field Section on binary package mythes-en-au
+    that duplicates source.
+  * Marked mythes-en-au as Multi-Arch: foreign.
+
+ -- Petter Reinholdtsen <pere@debian.org>  Wed, 04 Dec 2024 15:02:01 +0100
+
+openoffice.org-en-au (2.1-6) unstable; urgency=medium
+
+  * QA upload.
+  * Convert to source format 3.0. (closes: #1007390)
+  * Make the myspell-en-au package copyright apply for the source.
+    (closes: #1007390)
+
+ -- Bastian Germann <bage@debian.org>  Wed, 16 Aug 2023 18:02:02 +0000
+
+openoffice.org-en-au (2.1-5.6) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * use debhelper compatibility level 9 (not 5);
+    tighten build-dependency on debhelper;
+    closes: bug#965757, thanks to Niels Thykier
+  * fix add build targets build-arch build-indep;
+    closes: bug#998995, thanks to Lucas Nussbaum
+
+ -- Jonas Smedegaard <dr@jones.dk>  Mon, 14 Feb 2022 12:13:14 +0100
+
 openoffice.org-en-au (2.1-5.5) unstable; urgency=medium
 
   * Non maintainer upload by the Reproducible Builds team.
@@ -106,4 +145,3 @@ openoffice.org-en-au (2.1-1) unstable; urgency=low
   * Initial Release.
 
  -- John Steele Scott <toojays@toojays.net>  Sat, 25 Mar 2006 12:38:53 +1030
-
